@@ -28,9 +28,9 @@ def formatDestPath(path):
 	return path, pathChanged
 
 def checkFile(filename):
-	if fnmatch.fnmatch(filename, '*part1.rar') or fnmatch.fnmatch(filename, '*part01.rar'):
+	if fnmatch.fnmatch(filename, '*.part1.rar') or fnmatch.fnmatch(filename, '*.part01.rar') or fnmatch.fnmatch(filename, '*.part001.rar'):
 		return "RarFirst"
-	elif fnmatch.fnmatch(filename, '*part[0123456789].rar') or fnmatch.fnmatch(filename, '*part[0123456789][0123456789].rar'):
+	elif fnmatch.fnmatch(filename, '*part[0123456789].rar') or fnmatch.fnmatch(filename, '*part[0123456789][0123456789].rar') or fnmatch.fnmatch(filename, '*part[0123456789][0123456789][0123456789].rar'):
 		return "RarOther"
 	elif fnmatch.fnmatch(filename, '*.rar'):
 		return "RarFirst"
